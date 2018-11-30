@@ -1,12 +1,12 @@
 <h1><%= @name %></h1>
-<% @definitions.each do |definition| %>
-  <p><strong>Definition:</strong> <%= definition %></p>
+<% @definitions.each_with_index do |definition, index| %>
+  <p><strong>Definition <%= index +1 %>:</strong> <%= definition %></p>
 <% end %>
 
 <a href="/delete/<%= @id %>"><button type="button" name="button" class="btn btn-primary">Delete</button></a>
 <a href="/"><button type="button" name="button" class="btn btn-primary">Return to List</button></a>
 
-<h4>Add additional definitions</h4>
+<h4>Add definitions</h4>
 <form action="/definition/<%= @id %>" method="post">
 
   <div class="form-group">

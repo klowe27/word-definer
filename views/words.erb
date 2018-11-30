@@ -1,0 +1,14 @@
+<h2>All your words</h2>
+Click on a word to visit that page!
+<ul>
+  <% @words.each do |word| %>
+    <li><a href="word/<%= word.id %>"><%= word.name %></a></li>
+    <ul>
+    <% word.definitions.each_with_index do |definition, index| %>
+      <li><strong>Definition <%= index +1 %>:</strong> <%= definition %></li>
+    <% end %>
+    </ul>
+  <% end %>
+</ul>
+
+<a href="/"><button type="button" name="button" class="btn btn-primary">Return to List</button></a>

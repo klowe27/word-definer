@@ -14,7 +14,6 @@ describe('word definer') do
     it('takes a word and definition input and displays the word in a list') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
-      fill_in('definition', :with => 'Someone who is smart.')
       click_button('Add Word')
       expect(page).to have_content('Intelligent')
     end
@@ -24,7 +23,6 @@ describe('word definer') do
     it('takes the user to that word\'s page with definitions') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
-      fill_in('definition', :with => 'Someone who is smart.')
       click_button('Add Word')
       click_link('Intelligent')
       expect(page).to have_content('Intelligent')
@@ -35,7 +33,6 @@ describe('word definer') do
     it('removes the word') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
-      fill_in('definition', :with => 'Someone who is smart.')
       click_button('Add Word')
       click_link('Intelligent')
       click_link('Delete')
@@ -47,7 +44,6 @@ describe('word definer') do
     it('adds a definition to the word') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
-      fill_in('definition', :with => 'Someone who is smart.')
       click_button('Add Word')
       click_link('Intelligent')
       fill_in('definition', :with => 'Someone who talks a lot.')
@@ -60,12 +56,19 @@ describe('word definer') do
     it('shows an error if the word exists') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
-      fill_in('definition', :with => 'Someone who is smart.')
       click_button('Add Word')
       fill_in('word_name', :with => 'Intelligent')
-      fill_in('definition', :with => 'Someone who is smart.')
       click_button('Add Word')
       expect(page).to have_content('Oops')
+    end
+  end
+  describe('view all', {:type => :feature}) do
+    it('shows all words with their definitions') do
+      visit('/')
+      fill_in('word_name', :with => 'Intelligent')
+      click_button('Add Word')
+      click_button('View All')
+      expect(page).to have_content('Intelligent')
     end
   end
 end
