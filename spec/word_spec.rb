@@ -3,6 +3,9 @@ require('rspec')
 require('word')
 
 describe('Word') do
+  # before()do
+  #   Word.clear
+  # end
   describe('#initialize') do
     it('will create a new instance of the Word class') do
       word = Word.new("intelligent")
@@ -17,8 +20,17 @@ describe('Word') do
       word.save
       word2 = Word.new("banana")
       word2.save
-      expect(Word.words).to(eq([word, word2]))
+      expect(Word.all).to(eq([word, word2]))
       expect(word2.id).to(eq(1))
+    end
+  end
+
+  describe('.clear') do
+    it('clear the words array') do
+      word = Word.new("intelligent")
+      word.save
+      Word.clear
+      expect(Word.all).to(eq([]))
     end
   end
 end

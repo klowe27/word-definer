@@ -9,7 +9,7 @@ class Word
     @id = @@current_id
   end
 
-  def self.words
+  def self.all
     @@words
   end
 
