@@ -15,6 +15,7 @@ class Word
   end
 
   def self.sort
+    @@words.sort_by { |word| word.name }
   end
 
   def self.id

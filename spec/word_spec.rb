@@ -79,7 +79,7 @@ describe('Word') do
       word.save
       word2 = Word.new({:name => "banana", :definitions => ["A gross piece of fruit."]})
       word2.save
-      expect(Words.all).to(eq([word2, word]))
+      expect(Word.sort).to(eq([word2, word]))
     end
   end
 
