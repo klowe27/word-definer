@@ -2,10 +2,11 @@ class Word
   @@words = []
   @@current_id = 0
 
-  attr_accessor :name, :id
+  attr_accessor :name, :id, :definitions
 
-  def initialize(name)
-    @name = name.capitalize
+  def initialize(attributes)
+    @name = attributes.fetch(:name).capitalize
+    @definitions = attributes.fetch(:definitions)
     @id = @@current_id
   end
 
@@ -42,6 +43,9 @@ class Word
 
   def update(input_word)
     self.name = input_word.capitalize
+  end
+
+  def add_definition
   end
 
 end
