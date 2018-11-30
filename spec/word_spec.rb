@@ -45,13 +45,13 @@ describe('Word') do
     end
   end
 
-  describe('.delete') do
+  describe('#delete') do
     it('delete a word based on the id') do
       word = Word.new({:name => "intelligent", :definitions => ["Someone who is smart."]})
       word.save
       word2 = Word.new({:name => "banana", :definitions => ["A gross piece of fruit."]})
       word2.save
-      Word.delete(0)
+      word.delete
       expect(Word.all).to(eq([word2]))
     end
   end
@@ -68,8 +68,19 @@ describe('Word') do
   describe('#add_definition') do
     it('will add a definition to the word') do
       word = Word.new({:name => "intelligent", :definitions => ["Someone who is smart."]})
-      word.add_definition("Someone who talks a lot.")
+      word.add_definition("someone who talks a lot.")
       expect(word.definitions).to(eq(["Someone who is smart.", "Someone who talks a lot."]))
     end
   end
+
+  describe('.sort') do
+    it('will sort the words in alphabetical order') do
+      word = Word.new({:name => "intelligent", :definitions => ["Someone who is smart."]})
+      word.save
+      word2 = Word.new({:name => "banana", :definitions => ["A gross piece of fruit."]})
+      word2.save
+      expect(Words.all).to(eq([word2, word]))
+    end
+  end
+
 end

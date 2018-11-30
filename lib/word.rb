@@ -14,6 +14,9 @@ class Word
     @@words
   end
 
+  def self.sort
+  end
+
   def self.id
     @@current_id
   end
@@ -31,9 +34,8 @@ class Word
     end
   end
 
-  def self.delete(id)
-    word_to_delete = Word.find(id)
-    @@words.reject! {|word| word == word_to_delete}
+  def delete
+    @@words.reject! {|word| word == self}
   end
 
   def save
@@ -46,7 +48,7 @@ class Word
   end
 
   def add_definition(new_definition)
-    self.definitions.push(new_definition)
+    self.definitions.push(new_definition.capitalize)
   end
 
 end
