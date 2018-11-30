@@ -53,4 +53,14 @@ class Word
     self.definitions.push(new_definition.capitalize)
   end
 
+  def self.exist?(new_word)
+    # @@words.each do |word|
+    #   if word.name == new_word.capitalize
+    #     return true
+    #   else
+    #     return false
+    #   end
+    # end
+  end
+
 end

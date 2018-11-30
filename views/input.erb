@@ -13,9 +13,14 @@
   <button type="submit" name="button" class="btn btn-primary">Add Word</button>
 </form>
 
-<h2>Your words</h2>
-<ul>
-  <% @words.each do |word| %>
-    <li><a href="word/<%= word.id %>"><%= word.name %></a></li>
-  <% end %>
-</ul>
+<div style="<%= @display %>">
+  <h2>Your words</h2>
+  <ul>
+    <% @words.each do |word| %>
+      <li><a href="word/<%= word.id %>"><%= word.name %></a></li>
+    <% end %>
+  </ul>
+
+  <a href="/sort"><button class="btn btn-primary">Sort A-Z</button></a>
+  <a href="/reset"><button class="btn btn-primary">Reset</button></a>
+</div>

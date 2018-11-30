@@ -6,6 +6,7 @@ require('./lib/word')
 
 get('/') do
   @words = Word.all
+  @display = "display:none"
   erb(:input)
 end
 
@@ -14,7 +15,20 @@ post('/input') do
   definition = params.fetch('definition')
   word = Word.new({:name => word_name, :definitions => [definition]})
   word.save
+  @display = "display:block"
   @words = Word.all
+  erb(:input)
+end
+
+get('/sort')do
+  @words = Word.sort
+  @display = "display:block"
+  erb(:input)
+end
+
+get('/reset')do
+  @words = Word.all
+  @display = "display:block"
   erb(:input)
 end
 
@@ -31,6 +45,7 @@ get('/delete/:id') do
   @word = Word.find(@id)
   @word.delete
   @words = Word.all
+  @display = "display:block"
   erb(:input)
 end
 

@@ -83,4 +83,14 @@ describe('Word') do
     end
   end
 
+  describe('.exist?') do
+    it('will return true if a word exists') do
+      word = Word.new({:name => "intelligent", :definitions => ["Someone who is smart."]})
+      word.save
+      Word.exist?("intelligent")
+      expect(Word.exist?("intelligent")).to(eq(true))
+      expect(Word.exist?("llama")).to(eq(false))
+    end
+  end
+
 end
