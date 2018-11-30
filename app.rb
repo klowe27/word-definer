@@ -33,3 +33,14 @@ get('/delete/:id') do
   @words = Word.all
   erb(:input)
 end
+
+post('/definition/:id') do
+  @id = params[:id].to_i
+  definition = params.fetch('definition')
+  @word = Word.find(@id)
+  @name = @word.name
+  @definitions = @word.definitions
+  @word.add_definition(definition)
+  @words = Word.all
+  erb(:word)
+end
