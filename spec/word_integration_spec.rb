@@ -55,4 +55,17 @@ describe('word definer') do
       expect(page).to have_content('talks a lot.')
     end
   end
+
+  describe('error', {:type => :feature}) do
+    it('shows an error if the word exists') do
+      visit('/')
+      fill_in('word_name', :with => 'Intelligent')
+      fill_in('definition', :with => 'Someone who is smart.')
+      click_button('Add Word')
+      fill_in('word_name', :with => 'Intelligent')
+      fill_in('definition', :with => 'Someone who is smart.')
+      click_button('Add Word')
+      expect(page).to have_content('Oops')
+    end
+  end
 end

@@ -57,10 +57,9 @@ class Word
     @@words.each do |word|
       if word.name == new_word.capitalize
         return true
-      else
-        return false
       end
     end
+    return false
   end
 
 end
