@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: 'blogger_sansmedium';
   background-color: #0EBFE9;
 }
 
@@ -14,11 +14,10 @@ h1 {
   background-color: #FF4500;
   color: white;
   padding: 10px;
-  margin: -50px -1000px 20px -1000px;
+  margin: -50px -1000px 0px -1000px;
   text-align: center;
   font-size: 60px;
   border-radius: 0px 0px 25px 20px;
-  box-shadow: 2px 2px lightgray;
 }
 
 h2 {
@@ -49,7 +48,7 @@ h2 {
 }
 
 .list {
-  background-color: lightgray;
+  background-color: #F5F5F5;
   padding: 30px;
   border-radius:20px;
   margin-top: 20px;
@@ -58,4 +57,15 @@ h2 {
 a {
   color: #0EBFE9;
   font-weight: bold;
+}
+
+.nav-item {
+  background-color: gray;
+  margin: 0px 5px 20px 5px;
+  padding: 5px;
+  font-family: 'blogger_sansmedium';
+  color: white;
+  border-radius:0px 0px 5px 5px;
+  display: inline-block;
+  text-align: center;
 }

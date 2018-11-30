@@ -36,7 +36,7 @@ describe('word definer') do
       click_button('Add Word')
       click_link('Intelligent')
       click_link('Delete')
-      expect(page).to have_content('Add words')
+      expect(page).to have_content('Enter a word')
     end
   end
 
@@ -67,7 +67,7 @@ describe('word definer') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
       click_button('Add Word')
-      click_button('View All')
+      click_link('View All Words')
       expect(page).to have_content('Intelligent')
     end
   end
