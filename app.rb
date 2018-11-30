@@ -64,6 +64,6 @@ post('/definition/:id') do
 end
 
 get('/all') do
-  # @words = Word.all
-  # erb(:words)
+  @words = Word.all
+  erb(:words)
 end
