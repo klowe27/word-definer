@@ -1,15 +1,17 @@
-<h2>All your words</h2>
-Click on a word to visit that page!
-<ul>
-  <% @words.each do |word| %>
-    <li><a href="word/<%= word.id %>"><%= word.name %></a></li>
-    <ul>
-    <% word.definitions.each_with_index do |definition, index| %>
-      <li><strong>Definition <%= index +1 %>:</strong> <%= definition %></li>
+<div class="list">
+  <h2>All your words & definitions</h2>
+  Click on a word to visit that page!
+  <ul>
+    <% @words.each do |word| %>
+      <li><a href="word/<%= word.id %>"><%= word.name %></a></li>
+      <ul>
+      <% word.definitions.each_with_index do |definition, index| %>
+        <li><strong>Definition <%= index +1 %>:</strong> <%= definition %></li>
+      <% end %>
+      </ul>
     <% end %>
-    </ul>
-  <% end %>
-</ul>
+  </ul>
 
-<a href="/sort_words" style="<%= @sort %>"><button class="btn">Sort A-Z</button></a>
-<a href="/reset_words" style="<%= @reset %>"><button class="btn">Reset Sort</button></a>
+  <a href="/sort_words" style="<%= @sort %>"><button class="btn">Sort A-Z</button></a>
+  <a href="/reset_words" style="<%= @reset %>"><button class="btn">Reset Sort</button></a>
+</div>

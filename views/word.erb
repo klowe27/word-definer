@@ -1,16 +1,22 @@
-<h2><%= @name %></h2>
-<% @definitions.each_with_index do |definition, index| %>
-  <p><strong>Definition <%= index +1 %>:</strong> <%= definition %></p>
-<% end %>
+<div class="list">
+  <div class="row">
+    <div class="col-md-6">
 
-<a href="/delete/<%= @id %>"><button type="button" name="button" class="btn">Delete</button></a>
+      <h2><%= @name %></h2>
+      <% @definitions.each_with_index do |definition, index| %>
+        <p><strong>Definition <%= index +1 %>:</strong> <%= definition %></p>
+      <% end %>
+      <a href="/delete/<%= @id %>"><button type="button" name="button" class="btn">Delete Word</button></a>
+    </div>
+    <div class="col-md-6">
+      <h3>Add a definition</h3>
+      <form action="/definition/<%= @id %>" method="post">
 
-<h2>Add definitions</h2>
-<form action="/definition/<%= @id %>" method="post">
-
-  <div class="form-group">
-    <label for="definition">Enter definition</label>
-    <input type="text" name="definition" class="form-control">
+        <div class="form-group">
+          <input type="text" name="definition" class="form-control">
+        </div>
+        <button type="submit" name="button" class="btn">Add</button>
+      </form>
+    </div>
   </div>
-  <button type="submit" name="button" class="btn">Add Definition</button>
-</form>
+</div>

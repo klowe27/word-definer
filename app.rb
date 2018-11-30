@@ -70,7 +70,7 @@ get('/word/:id') do
   @word = Word.find(@id)
   @name = @word.name
   @definitions = @word.definitions
-  erb(:word, :layout => :layout)
+  erb(:word)
 end
 
 get('/random_word') do
