@@ -54,13 +54,13 @@ class Word
   end
 
   def self.exist?(new_word)
-    # @@words.each do |word|
-    #   if word.name == new_word.capitalize
-    #     return true
-    #   else
-    #     return false
-    #   end
-    # end
+    @@words.each do |word|
+      if word.name == new_word.capitalize
+        return true
+      else
+        return false
+      end
+    end
   end
 
 end
