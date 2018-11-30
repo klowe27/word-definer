@@ -54,4 +54,13 @@ describe('Word') do
       expect(Word.all).to(eq([word2]))
     end
   end
+
+  describe('#update') do
+    it('update a word\'s name based on an input') do
+      word = Word.new("intelligent")
+      word.save
+      word.update("smart")
+      expect(word.name).to(eq("Smart"))
+    end
+  end
 end
