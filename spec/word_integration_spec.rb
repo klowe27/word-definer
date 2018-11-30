@@ -30,7 +30,7 @@ describe('deleting a word in the list', {:type => :feature}) do
     fill_in('word_name', :with => 'Intelligent')
     fill_in('definition', :with => 'Someone who is smart.')
     click_link('Intelligent')
-    click_button('Delete')
+    click_link('Delete')
     expect(page).to have_content('Add words')
   end
 end

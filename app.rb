@@ -27,8 +27,9 @@ get('/word/:id') do
 end
 
 get('/delete/:id') do
-  # @id = params[:id].to_i
-  # @word = Word.find(@id)
-  # @word.delete
-  # erb(:input)
+  @id = params[:id].to_i
+  @word = Word.find(@id)
+  @word.delete
+  @words = Word.all
+  erb(:input)
 end
