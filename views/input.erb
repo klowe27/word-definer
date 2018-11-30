@@ -2,14 +2,20 @@
 <form action="/input" method="post">
 
   <div class="form-group">
-    <label for="word">Enter a word:</label>
-    <input type="text" name="word" class="form-control">
+    <label for="word_name">Enter a word</label>
+    <input type="text" name="word_name" class="form-control">
   </div>
 
   <div class="form-group">
-    <label for="definition">Enter a definition:</label>
+    <label for="definition">Enter a definition</label>
     <input type="text" name="definition" class="form-control">
   </div>
-
   <button type="submit" name="button" class="btn btn-primary">Add Word</button>
 </form>
+
+<h2>Your words</h2>
+<ul>
+  <% @words.each do |word| %>
+    <li><a href="word/<%= @id %>"><%= word.name %></a></li>
+  <% end %>
+</ul>
