@@ -14,7 +14,14 @@ post('/input') do
   definition = params.fetch('definition')
   word = Word.new({:name => word_name, :definitions => [definition]})
   word.save
-  @id = word.id
   @words = Word.all
   erb(:input)
+end
+
+get('/word/:id') do
+  @id = params[:id].to_i
+  @word = Word.find(@id)
+  @name = @word.name
+  @definitions = @word.definitions
+  erb(:word)
 end

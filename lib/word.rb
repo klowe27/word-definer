@@ -2,7 +2,8 @@ class Word
   @@words = []
   @@current_id = 0
 
-  attr_accessor :name, :id, :definitions
+  attr_accessor :name, :definitions
+  attr_reader :id
 
   def initialize(attributes)
     @name = attributes.fetch(:name).capitalize
