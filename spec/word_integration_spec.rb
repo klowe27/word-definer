@@ -23,3 +23,14 @@ describe('clicking on a word in the list', {:type => :feature}) do
     expect(page).to have_content('Intelligent')
   end
 end
+
+describe('deleting a word in the list', {:type => :feature}) do
+  it('removes the word') do
+    visit('/')
+    fill_in('word_name', :with => 'Intelligent')
+    fill_in('definition', :with => 'Someone who is smart.')
+    click_link('Intelligent')
+    click_button('Delete')
+    expect(page).to have_content('Add words')
+  end
+end

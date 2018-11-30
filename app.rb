@@ -25,3 +25,10 @@ get('/word/:id') do
   @definitions = @word.definitions
   erb(:word)
 end
+
+get('/delete/:id') do
+  # @id = params[:id].to_i
+  # @word = Word.find(@id)
+  # @word.delete
+  # erb(:input)
+end

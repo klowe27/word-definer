@@ -2,3 +2,5 @@
 <% @definitions.each do |definition| %>
   <p><strong>Definition:</strong> <%= definition %></p>
 <% end %>
+
+<a href="/delete/<%= @id %>"><button type="button" name="button">Delete</button></a>
