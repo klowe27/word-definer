@@ -15,12 +15,12 @@ post('/input') do
   word_name = params.fetch('word_name')
   definition = params.fetch('definition')
   @error = "display:none"
-  # if Word.exist?(word_name)
-  #   @error = "display:block"
-  # else
+  if Word.exist?(word_name)
+    @error = "display:block"
+  else
     word = Word.new({:name => word_name, :definitions => [definition]})
     word.save
-  # end
+  end
   @words = Word.all
   erb(:input)
 end
