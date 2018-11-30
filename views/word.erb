@@ -3,8 +3,8 @@
   <p><strong>Definition <%= index +1 %>:</strong> <%= definition %></p>
 <% end %>
 
-<a href="/delete/<%= @id %>"><button type="button" name="button" class="btn btn-primary">Delete</button></a>
-<a href="/"><button type="button" name="button" class="btn btn-primary">Return to List</button></a>
+<a href="/delete/<%= @id %>"><button type="button" name="button" class="btn">Delete</button></a>
+<a href="/"><button type="button" name="button" class="btn">Return to Home</button></a>
 
 <h4>Add definitions</h4>
 <form action="/definition/<%= @id %>" method="post">
@@ -13,5 +13,5 @@
     <label for="definition">Enter definition</label>
     <input type="text" name="definition" class="form-control">
   </div>
-  <button type="submit" name="button" class="btn btn-primary">Add Definition</button>
+  <button type="submit" name="button" class="btn">Add Definition</button>
 </form>

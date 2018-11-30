@@ -1,16 +1,16 @@
-<h2>Add words</h2>
+<h2>Enter a word</h2>
 <form action="/input" method="post">
 
   <div class="form-group">
-    <label for="word_name">Enter a word</label>
     <input type="text" name="word_name" class="form-control">
   </div>
 
-  <button type="submit" name="button" class="btn btn-primary">Add Word</button>
-</form>
-<p style="<%= @error %>">Oops, you've already added that word. Try adding a new word.</p>
+  <p style="<%= @error %>" class="error">Oops! you've already added that word. Try adding a new word.</p>
 
-<div>
+  <button type="submit" name="button" class="btn">Add Word</button>
+</form>
+
+<div style="<%= @list %>" class="list">
   <h2>Your words</h2>
   Click on a word to add your definitions!
   <ul>
@@ -19,9 +19,9 @@
     <% end %>
   </ul>
 
-  <a href="/sort"><button class="btn btn-primary">Sort A-Z</button></a>
-  <a href="/reset"><button class="btn btn-primary">Reset</button></a>
-</div>
+  <a href="/sort"><button class="btn">Sort A-Z</button></a>
+  <a href="/reset"><button class="btn">Reset Sort</button></a>
 
-<a href="/all"><button class="btn btn-primary">View All</button></a>
-<a href="/random_word"><button class="btn btn-primary">Random Word</button></a>
+  <a href="/all"><button class="btn">View All</button></a>
+  <a href="/random_word"><button class="btn">Random Word</button></a>
+</div>

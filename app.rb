@@ -7,6 +7,11 @@ require('./lib/word')
 get('/') do
   @words = Word.all
   @error = "display:none"
+  if Word.all == []
+    @list = "display:none"
+  else
+    @list = "display:block"
+  end
   erb(:input)
 end
 
@@ -20,19 +25,32 @@ post('/input') do
     word.save
   end
   @words = Word.all
+  @list = "display:block"
   erb(:input)
 end
 
 get('/sort')do
   @words = Word.sort
   @error = "display:none"
+  @list = "display:block"
   erb(:input)
 end
 
 get('/reset')do
   @words = Word.all
   @error = "display:none"
+  @list = "display:block"
   erb(:input)
+end
+
+get('/sort_words')do
+  @words = Word.sort
+  erb(:words)
+end
+
+get('/reset_words')do
+  @words = Word.all
+  erb(:words)
 end
 
 get('/word/:id') do
@@ -57,6 +75,7 @@ get('/delete/:id') do
   @word.delete
   @words = Word.all
   @error = "display:none"
+  @list = "display:block"
   erb(:input)
 end
 
