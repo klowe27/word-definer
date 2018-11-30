@@ -45,7 +45,8 @@ class Word
     self.name = input_word.capitalize
   end
 
-  def add_definition
+  def add_definition(new_definition)
+    self.definitions.push(new_definition)
   end
 
 end

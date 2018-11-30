@@ -69,7 +69,7 @@ describe('Word') do
     it('will add a definition to the word') do
       word = Word.new({:name => "intelligent", :definitions => ["Someone who is smart."]})
       word.add_definition("Someone who talks a lot.")
-      expect(word.definitions).to(eq(["Someone who is smart", "Someone who talks a lot."]))
+      expect(word.definitions).to(eq(["Someone who is smart.", "Someone who talks a lot."]))
     end
   end
 end
