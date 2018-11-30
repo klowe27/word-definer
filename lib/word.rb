@@ -40,4 +40,8 @@ class Word
       @@current_id += 1
   end
 
+  def update(input_word)
+    self.name = input_word.capitalize
+  end
+
 end
