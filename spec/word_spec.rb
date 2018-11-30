@@ -10,4 +10,12 @@ describe('Word') do
       expect(word.id).to(eq(0))
     end
   end
+
+  describe('#save') do
+    it('will save a word to the words array') do
+      word = Word.new("intelligent")
+      word.save
+      expect(Word.word_list).to(eq([word]))
+    end
+  end
 end
