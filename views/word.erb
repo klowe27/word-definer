@@ -4,3 +4,12 @@
 <% end %>
 
 <a href="/delete/<%= @id %>"><button type="button" name="button">Delete</button></a>
+
+<form action="/add_definition/<%= @id %>" method="post">
+
+  <div class="form-group">
+    <label for="definition">Enter another definition</label>
+    <input type="text" name="definition" class="form-control">
+  </div>
+  <button type="submit" name="button" class="btn btn-primary">Add Definition</button>
+</form>

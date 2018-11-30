@@ -34,3 +34,12 @@ describe('deleting a word in the list', {:type => :feature}) do
     expect(page).to have_content('Add words')
   end
 end
+
+describe('add definition form', {:type => :feature}) do
+  it('adds a definition to the word') do
+    visit('/')
+    fill_in('definition', :with => 'Someone who talks a lot.')
+    click_button('Add Definition')
+    expect(page).to have_content('talks a lot.')
+  end
+end
