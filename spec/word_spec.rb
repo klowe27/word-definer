@@ -12,10 +12,13 @@ describe('Word') do
   end
 
   describe('#save') do
-    it('will save a word to the words array') do
+    it('will save a word to the words array and update current ID') do
       word = Word.new("intelligent")
       word.save
-      expect(Word.word_list).to(eq([word]))
+      word2 = Word.new("banana")
+      word2.save
+      expect(Word.words).to(eq([word, word2]))
+      expect(word2.id).to(eq(1))
     end
   end
 end

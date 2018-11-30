@@ -8,10 +8,15 @@ class Word
     @name = name.capitalize
     @id = @@current_id
   end
-  #
-  # def save
-  #   @@words.push(self)
-      # @@current_id += 1
-  # end
+
+  def self.words
+    @@words
+  end
+
+  def save
+    @@words.push(self)
+      @@current_id += 1
+  end
+
 
 end
