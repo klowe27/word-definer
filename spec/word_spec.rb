@@ -43,4 +43,15 @@ describe('Word') do
       expect(Word.find(0)).to(eq(word))
     end
   end
+
+  describe('.delete') do
+    it('delete a word based on the id') do
+      word = Word.new("intelligent")
+      word.save
+      word2 = Word.new("intelligent")
+      word2.save
+      Word.delete(0)
+      expect(Word.all).to(eq([word2]))
+    end
+  end
 end

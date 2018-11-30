@@ -30,6 +30,9 @@ class Word
     end
   end
 
+  def self.delete(id)
+  end
+
   def save
     @@words.push(self)
       @@current_id += 1
