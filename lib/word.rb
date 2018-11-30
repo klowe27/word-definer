@@ -31,6 +31,8 @@ class Word
   end
 
   def self.delete(id)
+    word_to_delete = Word.find(id)
+    @@words.reject! {|word| word == word_to_delete}
   end
 
   def save
