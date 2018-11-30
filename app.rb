@@ -43,6 +43,14 @@ get('/word/:id') do
   erb(:word)
 end
 
+get('/random_word') do
+  @word = Word.random
+  @name = @word.name
+  @id = @word.id
+  @definitions = @word.definitions
+  erb(:word)
+end
+
 get('/delete/:id') do
   @id = params[:id].to_i
   @word = Word.find(@id)

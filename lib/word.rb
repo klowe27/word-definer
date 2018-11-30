@@ -15,12 +15,12 @@ class Word
     @@words
   end
 
-  def self.sort
-    @@words.sort_by { |word| word.name }
-  end
-
   def self.id
     @@current_id
+  end
+
+  def self.sort
+    @@words.sort_by { |word| word.name }
   end
 
   def self.clear
@@ -34,6 +34,19 @@ class Word
         return word
       end
     end
+  end
+
+  def self.exist?(new_word)
+    @@words.each do |word|
+      if word.name == new_word.capitalize
+        return true
+      end
+    end
+    return false
+  end
+
+  def self.random
+    @@words.sample
   end
 
   def delete
@@ -51,15 +64,6 @@ class Word
 
   def add_definition(new_definition)
     self.definitions.push(new_definition.capitalize)
-  end
-
-  def self.exist?(new_word)
-    @@words.each do |word|
-      if word.name == new_word.capitalize
-        return true
-      end
-    end
-    return false
   end
 
 end
