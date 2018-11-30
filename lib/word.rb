@@ -22,6 +22,14 @@ class Word
     @@current_id = 0
   end
 
+  def self.find(id)
+    @@words.each do |word|
+      if word.id == id
+        return word
+      end
+    end
+  end
+
   def save
     @@words.push(self)
       @@current_id += 1
