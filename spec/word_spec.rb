@@ -26,11 +26,12 @@ describe('Word') do
   end
 
   describe('.clear') do
-    it('clear the words array') do
+    it('clear the words array and sets current ID to 0') do
       word = Word.new("intelligent")
       word.save
       Word.clear
       expect(Word.all).to(eq([]))
+      expect(Word.id).to(eq(0))
     end
   end
 end
