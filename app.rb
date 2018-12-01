@@ -67,7 +67,7 @@ get('/random_word') do
   erb(:word)
 end
 
-get('/delete/:id') do
+post('/delete/:id') do
   @id = params[:id].to_i
   @word = Word.find(@id)
   @word.delete

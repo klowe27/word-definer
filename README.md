@@ -18,7 +18,8 @@ This basic application is a word definer for kids. The user can create a list of
 
 ## Known Bugs
 
-There are no known bugs at this time.
+* User can add an empty string as a new word
+* CSS styles not properly applying to some views
 
 ## Support and contact details
 
