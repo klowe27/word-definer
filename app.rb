@@ -30,6 +30,9 @@ post('/input') do
   end
   @words = Word.all
   @list = "display:block"
+  if Word.all == []
+    @list = "display:none"
+  end
   erb(:input)
 end
 
