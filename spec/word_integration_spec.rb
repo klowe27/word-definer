@@ -29,8 +29,8 @@ describe('word definer') do
     end
   end
 
-  describe('deleting a word in the list', {:type => :feature}) do
-    it('removes the word') do
+  describe('delete button on word page', {:type => :feature}) do
+    it('removes the word from the list') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
       click_button('Add Word')
@@ -53,7 +53,7 @@ describe('word definer') do
   end
 
   describe('error', {:type => :feature}) do
-    it('shows an error if the word exists') do
+    it('shows an error if the word already exists') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')
       click_button('Add Word')
@@ -62,7 +62,7 @@ describe('word definer') do
       expect(page).to have_content('Oops')
     end
   end
-  describe('view all', {:type => :feature}) do
+  describe('view all link', {:type => :feature}) do
     it('shows all words with their definitions') do
       visit('/')
       fill_in('word_name', :with => 'Intelligent')

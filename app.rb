@@ -76,9 +76,13 @@ post('/delete') do
   @word.delete
   @words = Word.all
   @error = "display:none"
-  @list = "display:block"
   @sort = "display:block"
   @reset = "display:none"
+  if Word.all == []
+    @list = "display:none"
+  else
+    @list = "display:block"
+  end
   erb(:input)
 end
 
