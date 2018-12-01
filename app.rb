@@ -51,20 +51,6 @@ get('/reset')do
   erb(:input)
 end
 
-get('/sort_words')do
-  @sort = "display:none"
-  @reset = "display:block"
-  @words = Word.sort
-  erb(:words)
-end
-
-get('/reset_words')do
-  @sort = "display:block"
-  @reset = "display:none"
-  @words = Word.all
-  erb(:words)
-end
-
 get('/word/:id') do
   @id = params[:id].to_i
   @word = Word.find(@id)
@@ -98,13 +84,27 @@ post('/definition/:id') do
   definition = params.fetch('definition')
   @word = Word.find(@id)
   @name = @word.name
-  @definitions = @word.definitions
   @word.add_definition(definition)
+  @definitions = @word.definitions
   @words = Word.all
   erb(:word)
 end
 
 get('/all') do
+  @sort = "display:block"
+  @reset = "display:none"
+  @words = Word.all
+  erb(:words)
+end
+
+get('/sort_all')do
+  @sort = "display:none"
+  @reset = "display:block"
+  @words = Word.sort
+  erb(:words)
+end
+
+get('/reset_all')do
   @sort = "display:block"
   @reset = "display:none"
   @words = Word.all

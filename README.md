@@ -6,14 +6,15 @@
 
 ## Description
 
-This basic application is a word definer for kids. Kids can create a list of words they don't know (but would like to learn) and then come up with their own definitions. The homepage of the site lists all the words and allows kids to add additional words. When a word is clicked, it takes the user to a page with its definitions; the user can add additional definitions.
+This basic application is a word definer for kids. The user can create a list of words they don't know (but would like to learn) and then come up with their own definitions. The homepage lets a user add to a list. When a word in the list is clicked, it takes the user to a page for that word; the user can add as many definitions as they'd like or delete the word entry. The user can also view all words (including definitions), go to a random word, and sort their list of words in alphabetical order.
 
 ## Setup/Installation Requirements
 
+* View directly at:
 * In the command line, clone this repository with $ git clone https://github.com/klowe27/word-definer
-* Navigate into the directory and install dependent gems by running $ bundle
+* Navigate into the directory in the command line and install dependent gems by using command $ bundle
 * To launch the application, use command $ ruby app.rb
-* In any browser (preferably Chrome), navigate to http://localhost:4567/ 
+* In any browser (preferably Chrome), navigate to http://localhost:4567/
 
 ## Known Bugs
 
