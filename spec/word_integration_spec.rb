@@ -62,6 +62,7 @@ describe('word definer') do
       expect(page).to have_content('Oops')
     end
   end
+  
   describe('view all link', {:type => :feature}) do
     it('shows all words with their definitions') do
       visit('/')

@@ -55,7 +55,7 @@ class Word
 
   def save
     @@words.push(self)
-      @@current_id += 1
+    @@current_id += 1
   end
 
   def update(input_word)
