@@ -10,8 +10,8 @@ This basic application is a word definer for kids. The user can create a list of
 
 ## Setup/Installation Requirements
 
-* View directly at:
-* In the command line, clone this repository with $ git clone https://github.com/klowe27/word-definer
+* View directly at: https://ancient-gorge-50266.herokuapp.com/
+* Or, in the command line, clone this repository with $ git clone https://github.com/klowe27/word-definer
 * Navigate into the directory in the command line and install dependent gems by using command $ bundle
 * To launch the application, use command $ ruby app.rb
 * In any browser (preferably Chrome), navigate to http://localhost:4567/
