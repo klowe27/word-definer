@@ -35,7 +35,7 @@ describe('word definer') do
       fill_in('word_name', :with => 'Intelligent')
       click_button('Add Word')
       click_link('Intelligent')
-      click_link('Delete Word')
+      click_button('Delete Word')
       expect(page).to have_content('Enter a word')
     end
   end

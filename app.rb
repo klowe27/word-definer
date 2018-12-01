@@ -67,8 +67,8 @@ get('/random_word') do
   erb(:word)
 end
 
-post('/delete/:id') do
-  @id = params[:id].to_i
+post('/delete') do
+  @id = params.fetch('id').to_i
   @word = Word.find(@id)
   @word.delete
   @words = Word.all
@@ -79,8 +79,8 @@ post('/delete/:id') do
   erb(:input)
 end
 
-post('/definition/:id') do
-  @id = params[:id].to_i
+post('/definition') do
+  @id = params.fetch('id').to_i
   definition = params.fetch('definition')
   @word = Word.find(@id)
   @name = @word.name
